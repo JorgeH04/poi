@@ -1,0 +1,239 @@
+<% include ../partials/_header %>
+
+<div class="site-blocks-cover inner-page-cover overlay" style="background-image: url(https://res.cloudinary.com/dsk4fft6r/image/upload/v1656179374/hero_bg_4_oulsx4.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+    <div class="container">
+      <div class="row align-items-center justify-content-center text-center">
+        <div class="col-md-10">
+           <h1 class="mb-2">Detalles</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="site-section site-section-sm">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <div>
+            <div class="slide-one-item home-slider owl-carousel">
+              <div><img src="<%= ofertauno.imageuno %>" alt="Image" class="img-fluid"></div>
+              <div><img src="<%= ofertauno.imagedos %>" alt="Image" class="img-fluid"></div>
+              <div><img src="<%= ofertauno.imagetres %>" alt="Image" class="img-fluid"></div>
+            </div>
+          </div>
+
+
+          <div class="bg-white property-body border-bottom border-left border-right">
+              <div class="row mb-5">
+                <div class="col-md-6">
+                  <strong class="text-primary h1 mb-3">€ <%= ofertauno.price %></strong>
+                </div>
+    
+                <div class="col-md-6">
+                  <ul class="property-specs-wrap mb-3 mb-lg-0  float-lg-right">
+    
+                      <li>
+                          <!-- <span class="property-specs">
+                             <img src="https://res.cloudinary.com/dsk4fft6r/image/upload/c_scale,w_25/v1656346048/1606239_n4aolu.png" alt="">
+                         </span> -->
+                         <span class="property-specs-number">
+                            <img src="https://res.cloudinary.com/dsk4fft6r/image/upload/c_scale,w_30/v1662653194/images_pw3ywc.png" >
+                           Beds: <%= ofertauno.color %></span>
+                         
+                       </li>
+                       <br>
+                  <li>
+                    <!-- <span class="property-specs">
+                      <img src="https://res.cloudinary.com/dsk4fft6r/image/upload/c_scale,w_20/v1661376513/WhatsApp_Image_2022-08-24_at_6.26.21_PM_jbaisz.jpg">
+                    </span> -->
+                    <span class="property-specs-number">
+                        <img src="https://res.cloudinary.com/dsk4fft6r/image/upload/c_scale,w_30/v1662653194/images_pw3ywc.png" >
+                        Bath: <%= ofertauno.colorstock %> <sup> </sup></span>
+                    
+                  </li>
+              
+                  <br>
+              
+    
+    
+                   <li>
+                    <!-- <span class="property-specs">
+                       <img src="https://res.cloudinary.com/dsk4fft6r/image/upload/c_scale,w_22/v1662497087/WhatsApp_Image_2022-09-06_at_17.42.47_m8nzot.jpg" alt="">
+                   </span> -->
+                   <span class="property-specs-number">
+                      <img src="https://res.cloudinary.com/dsk4fft6r/image/upload/c_scale,w_30/v1662653194/images_pw3ywc.png" >
+                     m2 built: <%= ofertauno.talle %></span>
+                   
+                  </li>
+                     <br>
+                   <li>
+                      <!-- <span class="property-specs">
+                         <img src="https://res.cloudinary.com/dsk4fft6r/image/upload/c_scale,w_20/v1656340397/182657_ycmmol.png" alt="">
+                     </span> -->
+                     <span class="property-specs-number">
+                        <img src="https://res.cloudinary.com/dsk4fft6r/image/upload/c_scale,w_30/v1662653194/images_pw3ywc.png" >
+                       m2 Plot: <%= ofertauno.enstock %></span>
+                     
+                   </li>
+                </ul>
+                </div>
+              </div>
+
+
+
+          <!-- <div class="bg-white property-body border-bottom border-left border-right">
+            <div class="row mb-5">
+              <div class="col-md-6">
+                <strong class="text-primary h1 mb-3">$ <%= ofertauno.price %></strong>
+              </div>
+              <div class="col-md-6">
+                <ul class="property-specs-wrap mb-3 mb-lg-0  float-lg-right">
+                <li>
+                  <span class="property-specs">
+                    <img src="https://res.cloudinary.com/dsk4fft6r/image/upload/c_scale,w_20/v1661376513/WhatsApp_Image_2022-08-24_at_6.26.21_PM_jbaisz.jpg">
+                  </span>
+                  <span class="property-specs-number"><%= ofertauno.colorstock %> <sup> </sup></span>
+                  
+                </li>
+                <li>
+                   <span class="property-specs">
+                      <img src="https://res.cloudinary.com/dsk4fft6r/image/upload/c_scale,w_22/v1662497087/WhatsApp_Image_2022-09-06_at_17.42.47_m8nzot.jpg" alt="">
+                  </span>
+                  <span class="property-specs-number"><%= ofertauno.talle %></span>
+                  
+                </li>
+                <li>
+                    <span class="property-specs">
+                       <img src="https://res.cloudinary.com/dsk4fft6r/image/upload/c_scale,w_25/v1656346048/1606239_n4aolu.png" alt="">
+                   </span>
+                   <span class="property-specs-number"><%= ofertauno.color %></span>
+                   
+                 </li>
+  
+  
+            
+  
+              </ul>
+              </div>
+            </div> -->
+
+
+            <!-- <div class="row mb-5">
+              <div class="col-md-6 col-lg-4 text-center border-bottom border-top py-3">
+                <span class="d-inline-block text-black mb-0 caption-text">Tipo de vivienda</span>
+                <strong class="d-block"><%= ofertauno.filtro %></strong>
+              </div>
+              <div class="col-md-6 col-lg-4 text-center border-bottom border-top py-3">
+                <span class="d-inline-block text-black mb-0 caption-text">Antigüedad</span>
+                <strong class="d-block"><%= ofertauno.oldprice %></strong>
+              </div>
+              <div class="col-md-6 col-lg-4 text-center border-bottom border-top py-3">
+                  <span class="d-inline-block text-black mb-0 caption-text">Ambientes</span>
+                  <strong class="d-block"><%= ofertauno.enstock %></strong>
+                </div>
+            </div> -->
+            <h2 class="h4 text-black">  </h2>
+            <p><%= ofertauno.description %></p>
+        
+           
+            <div class="row no-gutters mt-5">
+              <div class="col-12">
+                <h2 class="h4 text-black mb-3">Galería</h2>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-3">
+                <a href="<%= ofertauno.imageuno %>" class="image-popup gal-item"><img src="<%= ofertauno.imageuno %>" alt="Image" class="img-fluid"></a>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-3">
+                <a href="<%= ofertauno.imagedos %>" class="image-popup gal-item"><img src="<%= ofertauno.imagedos %>" alt="Image" class="img-fluid"></a>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-3">
+                <a href="<%= ofertauno.imagetres %>" class="image-popup gal-item"><img src="<%= ofertauno.imagetres %>" alt="Image" class="img-fluid"></a>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-3">
+                <a href="<%= ofertauno.imagecuatro %>" class="image-popup gal-item"><img src="<%= ofertauno.imagecuatro %>" alt="Image" class="img-fluid"></a>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-3">
+                <a href="<%= ofertauno.imagecinco %>" class="image-popup gal-item"><img src="<%= ofertauno.imagecinco %>" alt="Image" class="img-fluid"></a>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-3">
+                <a href="<%= ofertauno.imageseis %>" class="image-popup gal-item"><img src="<%= ofertauno.imageseis %>" alt="Image" class="img-fluid"></a>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-3">
+                <a href="<%= ofertauno.imagesiete %>" class="image-popup gal-item"><img src="<%= ofertauno.imagesiete %>" alt="Image" class="img-fluid"></a>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-3">
+                <a href="<%= ofertauno.imageocho %>" class="image-popup gal-item"><img src="<%= ofertauno.imageocho %>" alt="Image" class="img-fluid"></a>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-3">
+                <a href="<%= ofertauno.imagenueve %>" class="image-popup gal-item"><img src="<%= ofertauno.imagenueve %>" alt="Image" class="img-fluid"></a>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-3">
+                <a href="<%= ofertauno.imagediez %>" class="image-popup gal-item"><img src="<%= ofertauno.imagediez %>" alt="Image" class="img-fluid"></a>
+              </div>
+
+              <div class="col-sm-6 col-md-4 col-lg-3">
+                <a href="<%= ofertauno.imageonce %>" class="image-popup gal-item"><img src="<%= ofertauno.imageonce %>" alt="Image" class="img-fluid"></a>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-3">
+                <a href="<%= ofertauno.imagedoce %>" class="image-popup gal-item"><img src="<%= ofertauno.imagedoce %>" alt="Image" class="img-fluid"></a>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-3">
+                <a href="<%= ofertauno.imagetrece %>" class="image-popup gal-item"><img src="<%= ofertauno.imagetrece %>" alt="Image" class="img-fluid"></a>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-3">
+                <a href="<%= ofertauno.imagecatorce %>" class="image-popup gal-item"><img src="<%= ofertauno.imagecatorce %>" alt="Image" class="img-fluid"></a>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-3">
+                <a href="<%= ofertauno.imagequince %>" class="image-popup gal-item"><img src="<%= ofertauno.imagequince %>" alt="Image" class="img-fluid"></a>
+              </div>
+
+
+              <div class="col-sm-6 col-md-4 col-lg-3">
+                <a href="<%= ofertauno.imagedieciseis %>" class="image-popup gal-item"><img src="<%= ofertauno.imagedieciseis %>" alt="Image" class="img-fluid"></a>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-3">
+                <a href="<%= ofertauno.imagediecisiete %>" class="image-popup gal-item"><img src="<%= ofertauno.imagediecisiete %>" alt="Image" class="img-fluid"></a>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-3">
+                <a href="<%= ofertauno.imagedieciocho %>" class="image-popup gal-item"><img src="<%= ofertauno.imagedieciocho %>" alt="Image" class="img-fluid"></a>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-3">
+                <a href="<%= ofertauno.imagediecinueve %>" class="image-popup gal-item"><img src="<%= ofertauno.imagediecinueve %>" alt="Image" class="img-fluid"></a>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-3">
+                <a href="<%= ofertauno.imageveinte %>" class="image-popup gal-item"><img src="<%= ofertauno.imageveinte %>" alt="Image" class="img-fluid"></a>
+              </div>
+
+
+              <div class="col-sm-6 col-md-4 col-lg-3">
+                <a href="<%= ofertauno.imageveintiuno %>" class="image-popup gal-item"><img src="<%= ofertauno.imageveintiuno %>" alt="Image" class="img-fluid"></a>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-3">
+                <a href="<%= ofertauno.imageveintidos %>" class="image-popup gal-item"><img src="<%= ofertauno.imageveintidos %>" alt="Image" class="img-fluid"></a>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-3">
+                <a href="<%= ofertauno.imageveintitres %>" class="image-popup gal-item"><img src="<%= ofertauno.imageveintitres %>" alt="Image" class="img-fluid"></a>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-3">
+                <a href="<%= ofertauno.imageveinticuatro %>" class="image-popup gal-item"><img src="<%= ofertauno.imageveinticuatro %>" alt="Image" class="img-fluid"></a>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-3">
+                <a href="<%= ofertauno.imageveinticinco %>" class="image-popup gal-item"><img src="<%= ofertauno.imageveinticinco %>" alt="Image" class="img-fluid"></a>
+              </div>
+ 
+            </div>
+  
+          </div>
+        </div>
+    
+        
+      </div>
+    </div>
+  </div>
+  
+  
+  
+
+
+<% include ../partials/_footer %>
+
