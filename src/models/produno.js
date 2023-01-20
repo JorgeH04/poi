@@ -61,7 +61,7 @@ const NoteSchema = new Schema({
   dolarprice: String,
   amount: String,
   like: {
-    type: Boolean,
+    type: Boolean, 
     default: false
   },
 

@@ -3,13 +3,7 @@ const router = express.Router();
 
 // Models
 const Ofertatres = require('../models/ofertatres');
-const Cart = require('../models/cart');
-const Cartdolar = require('../models/cartdolar');
-const Order = require('../models/order');
-const request = require('request');
-
-// Helpers
-const { isAuthenticated } = require('../helpers/auth');
+ 
 
 const path = require('path');
 const { unlink } = require('fs-extra');
@@ -20,27 +14,7 @@ cloudinary.config({
   api_secret:'EnOvxHpFoTKSdfDybes9Po6OoPI'
   
 });
-// const getUrl = async () => {
-//   const ofertauno = await Ofertatres.find();
-//   let ii = ofertauno.map(item=>item.title)
-//   console.log(ii)
-
-//   return ii
-// }
-
  
-
-
-// const ping =  () =>  
-
-//     request(`${ii}`, (error, response, body) => {
-
-//     console.log('error:', error); // Print the error if one occurred
-//     console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
-//     console.log('body:', body); // Print body of response received
-
-// });
-// setInterval(ping, 20*60*1000); // I have set to 20 mins interval
 
 
 router.post('/ofertatres/new-ofertatres',   async (req, res) => {
@@ -89,10 +63,7 @@ router.get('/ofertatresredirect/:id', async (req, res) => {
     });
 });
 
-
-
-
-
+ 
 
 
 
@@ -105,18 +76,7 @@ router.get('/ofertatres/add',  async (req, res) => {
 
 
 
-////////////////////////////like////////////////////////
-
-router.get('/liketres/:id', async (req, res, next) => {
-  // let { id } = req.params;
-  // const task = await Ofertauno.findById(id);
-  const task = await Ofertatres.findById(req.params.id);
-  task.like = !task.like;
-  await task.save();
- // res.redirect('/pedidos/:1');
-  res.json(true);
-});
-
+ 
 
 
 ////////////////////////////////////////crud////////////////////////////////////////////////7
@@ -150,31 +110,7 @@ router.get('/ofertatres/delete/:id', async (req, res) => {
 
 
 
-////////////////////////////////////////cart////////////////////////////////////////////////7
-
-
-
-
-
-router.get('/addtocardofertatres/:id', function(req, res, next){
-  var productId = req.params.id;
-  var cart = new Cart(req.session.cart ? req.session.cart : {items: {}});
-  var cartdolar = new Cartdolar(req.session.cartdolar ? req.session.cartdolar : {items: {}});
-
-  Ofertatres.findById(productId, function(err, product){
-    if(err){
-      return res-redirect('/');
-    }
-    cartdolar.add(product, product.id);
-    cart.add(product, product.id);
-    req.session.cart = cart;
-    req.session.cartdolar = cartdolar;
-    console.log(req.session.cart);
-    res.redirect('/shopcart');
-
-  });
-});
-
+ 
 module.exports = router;
 
 

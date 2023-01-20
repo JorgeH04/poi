@@ -10,7 +10,6 @@ const Proddos = require('../models/proddos');
 // const Order = require('../models/order');
 // const Cartdolar = require('../models/cartdolar');
 // Helpers
-const { isAuthenticated } = require('../helpers/auth');
  
  const cloudinary = require('cloudinary');
 cloudinary.config({

@@ -3,34 +3,27 @@ const router = express.Router();
  
 // Models
 const Ofertauno = require('../models/ofertauno');
-const Cart = require('../models/cart');
-const Cartdolar = require('../models/cartdolar');
-const Order = require('../models/order');
-// Helpers
-const { isAuthenticated } = require('../helpers/auth');
-
-
+ 
+ 
 
 const path = require('path');
 const { unlink } = require('fs-extra');
 const cloudinary = require('cloudinary');
 
 
+// cloudinary.config({
+//   cloud_name:'dd3uzxyfv',
+//   api_key:'946715245779221',
+//   api_secret:'mETr4SE0tAMSbvOlsMzjUotkx5c'
+  
+// });
 cloudinary.config({
-  cloud_name:'dd3uzxyfv',
-  api_key:'946715245779221',
-  api_secret:'mETr4SE0tAMSbvOlsMzjUotkx5c'
+  cloud_name:'dsk4fft6r',
+  api_key:'168297322199897',
+  api_secret:'nHp3wKpofJIeNm2AlVFf9PgseZk'
   
 });
-// const multer = require('multer');
 
-// const storage = multer.diskStorage({
-//   filename: function (req, file, cb) {
-//     cb(null, file.fieldname + "-" + Date.now());
-//   },
-// });
-
-// const upload = multer({ storage });
 
 
 
@@ -110,70 +103,7 @@ router.post('/ofertauno/new-ofertauno',  async (req, res) => {
 });
 
 
-
-
-// router.post("/ofertauno/new-ofertauno", upload.array("pictures", 25), async (req, res) => {
-//   const { name, title, filtro, description, enstock, oldprice, color, colorstock, talle, amount, dolarprice, price} = req.body;
-
-//   try {
-//     let pictureFiles = req.files;
-//     //Check if files exist
-//     if (!pictureFiles)
-//       return res.status(400).json({ message: "No picture attached!" });
-//     //map through images and create a promise array using cloudinary upload function
-//     let multiplePicturePromise = pictureFiles.map((picture) =>
-//       cloudinary.v2.uploader.upload(picture.path)
-//     );
-//     // await all the cloudinary upload functions in promise.all, exactly where the magic happens
-//     let imageResponses = await Promise.all(multiplePicturePromise);
-// //console.log(imageResponses[0])
-//   //      const newNote = new Ofertauno({ 
  
-//   //   name, title, description, enstock, oldprice, color, colorstock, talle, amount, dolarprice, filtro,
-//   //   imageuno:resp.url,
-//   //   imagedos:respdos.url,
-//   //   imagetres:resptres.url,
-//   //   imagecuatro:respcuatro.url,
-//   //   imagecinco:respcinco.url,
-//   //   imageseis:respseis.url,
-//   //   imagesiete:respsiete.url,
-//   //   imageocho:respocho.url,
-//   //   imagenueve:respnueve.url,
-//   //   imagediez:respdiez.url,
-
-//   //   imageonce:responce.url,
-//   //   imagedoce:respdoce.url,
-//   //   imagetrece:resptrece.url,
-//   //   imagecatorce:respcatorce.url,
-//   //   imagequince:respquince.url,
-//   //   imagedieciseis:respdieciseis.url,
-//   //   imagediecisiete:respdiecisiete.url,
-//   //   imagedieciocho:respdieciocho.url,
-//   //   imagediecinueve:respdiecinueve.url,
-//   //   imageveinte:respveinte.url,
-
-//   //   imageveintiuno:respveintiuno.url,
-//   //   imageveintidos:respveintidos.url,
-//   //   imageveintitres:respveintitres.url,
-//   //   imageveinticuatro:respveinticuatro.url,
-//   //   imageveinticinco:respveinticinco.url,
-  
-//   //   price
-//   // });
-//   // await newNote.save();
-//     res.redirect('/ofertauno/add');
-
-//     //res.status(200).json({ images: imageResponses });
-//   } catch (err) {
-//     res.status(500).json({
-//       message: err.message,
-//     });
-//   }
-// });
-
- 
-
-
  
 
 router.get('/ofertaunoredirect/:id', async (req, res) => {
@@ -209,15 +139,6 @@ router.get('/ofertauno/add',  async (req, res) => {
 
 ////////////////////////////like////////////////////////
 
-router.get('/like/:id', async (req, res, next) => {
-  // let { id } = req.params;
-  // const task = await Ofertauno.findById(id);
-  const task = await Ofertauno.findById(req.params.id);
-  task.like = !task.like;
-  await task.save();
- // res.redirect('/pedidos/:1');
-  res.json(true);
-});
  
 
 
@@ -251,27 +172,7 @@ router.get('/ofertauno/delete/:id', async (req, res) => {
 
 
 
-////////////////////////////////////////cart////////////////////////////////////////////////7
-
-
-router.get('/addtocardofertauno/:id', function(req, res, next){
-  var productId = req.params.id;
-  var cart = new Cart(req.session.cart ? req.session.cart : {items: {}});
-  var cartdolar = new Cartdolar(req.session.cartdolar ? req.session.cartdolar : {items: {}});
-
-  Ofertauno.findById(productId, function(err, product){
-    if(err){
-      return res-redirect('/');
-    }
-    cartdolar.add(product, product.id);
-    cart.add(product, product.id);
-    req.session.cart = cart;
-    req.session.cartdolar = cartdolar;
-    console.log(req.session.cart);
-    res.redirect('/shopcart');
-
-  });
-});
+ 
 
 
 module.exports = router;

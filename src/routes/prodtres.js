@@ -5,11 +5,8 @@ const path = require('path');
 const { unlink } = require('fs-extra');
 // Models
 const Prodtres = require('../models/prodtres');
-const Cart = require('../models/cart');
-const Cartdolar = require('../models/cartdolar');
  
 // Helpers
-const { isAuthenticated } = require('../helpers/auth');
 
 const cloudinary = require('cloudinary');
 

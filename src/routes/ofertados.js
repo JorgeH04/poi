@@ -4,14 +4,8 @@ const cloudinary = require('cloudinary');
 
 // Models
 const Ofertados = require('../models/ofertados');
-const Cart = require('../models/cart');
-const Cartdolar = require('../models/cartdolar');
-const Order = require('../models/order');
-
+ 
 // Helpers
-const { isAuthenticated } = require('../helpers/auth');
-
-
 
 
 router.post('/ofertados/new-ofertados',  async (req, res) => {
@@ -131,29 +125,10 @@ router.get('/ofertados/add',  async (req, res) => {
 
 
 
-////////////////////////////like////////////////////////
-
-router.get('/likedos/:id', async (req, res, next) => {
-  // let { id } = req.params;
-  // const task = await Ofertauno.findById(id);
-  const task = await Ofertados.findById(req.params.id);
-  task.like = !task.like;
-  await task.save();
- // res.redirect('/pedidos/:1');
-  res.json(true);
-});
+ 
 
 
-
-
-router.post('/pop/:id',  async (req, res) => {
-  const { id } = req.params;
-  const task = await Ofertados.findById(id);
-  task.stock = !task.stock;
-  await task.save();
-  res.redirect('/ofertados/add');
-
-});
+ 
 
 
 
@@ -188,29 +163,6 @@ router.get('/ofertados/delete/:id', async (req, res) => {
 
 
 
-////////////////////////////////////////cart////////////////////////////////////////////////7
-
-
-
-
-router.get('/addtocardofertados/:id', function(req, res, next){
-  var productId = req.params.id;
-  var cart = new Cart(req.session.cart ? req.session.cart : {items: {}});
-  var cartdolar = new Cartdolar(req.session.cartdolar ? req.session.cartdolar : {items: {}});
-
-  Ofertados.findById(productId, function(err, product){
-    if(err){
-      return res-redirect('/');
-    }
-    cartdolar.add(product, product.id);
-    cart.add(product, product.id);
-    req.session.cart = cart;
-    req.session.cartdolar = cartdolar;
-    console.log(req.session.cart);
-    res.redirect('/shopcart');
-
-  });
-});
-
+ 
 
 module.exports = router;
